@@ -1,4 +1,4 @@
-#Welcome To the command line app which calculates delivery time and cost of the packages
+Welcome To the command line app which calculates delivery time and cost of the packages
 
 Getting Started:
 
