@@ -65,7 +65,7 @@ function extractDataIfInputIsValid(input) {
 		if (!onlyNumbersRegex.test(baseDeliveryCost) || !onlyNumbersRegex.test(totalPackages)) {
 			//checking if cost and total package is valid numbers
 			valid = false;
-			errorMessage = "baseDeliveryCost  and totalPackages should be number only";
+			errorMessage = "baseDeliveryCost and totalPackages should be number only";
 		}
 
 		totalPackages = parseInt(totalPackages);
@@ -111,6 +111,13 @@ function extractDataIfInputIsValid(input) {
 				if (!onlyNumbersRegex.test(packageWeight) || !onlyNumbersRegex.test(packageDistance)) {
 					valid = false;
 					errorMessage = "packageWeight  and packageDistance should be number only";
+				}
+				if(valid){
+					let tempWeight = parseInt(packageWeight)
+					if(tempWeight>maxCarriableWeight){
+						errorMessage = 'Package weight can not be more then maxCarriableWeight' 
+						valid = false
+					}
 				}
 				packages.push(input[i]);
 			}
